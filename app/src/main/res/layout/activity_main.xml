@@ -83,7 +83,7 @@
     </ScrollView-->
 
     <!-- Question answer part-->
-    <LinearLayout
+    <!--LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -95,40 +95,70 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/im1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/background_image_480" />
+            <ImageView
+                android:id="@+id/im1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/background_image_480" />
 
-        <TextView
-            android:id="@+id/id_am_tv_quiz_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="QuizTime"
-            android:textColor="#FFF"
-            android:textSize="56sp"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/id_am_tv_shoak_se_khelo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="142dp"
-            android:text="Play like a game"
-            android:textColor="#FFF"/>
+                <TextView
+                    android:id="@+id/id_am_tv_quiz_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="Hi! Bishram Munda"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:fontFamily="serif-monospace"
+                    tools:targetApi="jelly_bean" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="It's"
+                    android:textColor="#FFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="QuizTime"
+                    android:textStyle="bold"
+                    android:textColor="#FFF"
+                    android:textSize="48sp" />
+            </LinearLayout>
         </RelativeLayout>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/im1"
             android:adjustViewBounds="true"
             android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_image_480" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_image_480" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
             android:src="@drawable/background_image_480" />
     </LinearLayout>
 
@@ -137,12 +167,32 @@
         android:layout_height="match_parent"
         android:background="#55ff008c" />
 
+    <TextView
+        android:id="@+id/id_am_btn_sv_next"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="Save &amp; Next"
+        android:textColor="#FFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="jelly_bean" />
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
+        android:background="#eaeaea"
         android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/id_am_btn_sv_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -154,83 +204,86 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorAccent"
                 android:gravity="center_vertical"
-                android:paddingEnd="16dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingStart="16dp"
+                android:paddingBottom="24dp"
+                android:paddingEnd="24dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingStart="24dp"
                 android:paddingTop="36dp"
-                android:paddingBottom="36dp"
                 android:text="Who is our (Current Indian) Prime Minister?"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorAccent" />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#123"
+                android:layout_margin="24dp"
                 android:orientation="vertical">
 
                 <RadioButton
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:textColor="#FFF"
-                    android:text="Mahatma Gandhi"/>
+                    android:layout_height="wrap_content"
+                    android:text="Mahatma Gandhi"
+                    android:textColor="#000" />
 
                 <RadioButton
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:textColor="#FFF"
-                    android:text="Pandit Jawaharlal Nehru" />
+                    android:layout_height="wrap_content"
+                    android:text="Pandit Jawaharlal Nehru"
+                    android:textColor="#000" />
 
                 <RadioButton
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:textColor="#FFF"
-                    android:text="Narendra Damodar Das Modi" />
+                    android:layout_height="wrap_content"
+                    android:text="Narendra Damodar Das Modi"
+                    android:textColor="#000" />
 
                 <RadioButton
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:textColor="#FFF"
-                    android:text="Dr. Sarbpalli Radhakrishnann" />
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Sarbpalli Radhakrishnann"
+                    android:textColor="#000" />
             </RadioGroup>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:gravity="center"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:clickable="true"
-                android:focusable="true"
-                android:fontFamily="sans-serif-condensed"
-                android:text="Save &amp; Next"
-                tools:targetApi="jelly_bean" />
         </LinearLayout>
     </ScrollView>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginStart="24dp"
-        android:text="Hi! Bishram Munda"
-        android:textColor="#FFF"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Time elapsed - 08:56 minutes"
-        android:textColor="#FFF"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Question #01 of 10"
+            android:textColor="#FFF" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#FFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="Time elapsed - 08:56"
+            android:textColor="#FFF" />
+    </LinearLayout-->
 </android.support.constraint.ConstraintLayout>
