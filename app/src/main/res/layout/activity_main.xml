@@ -6,322 +6,344 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            app:srcCompat="@drawable/background_image_480" />
-
-        <TextView
-            android:id="@+id/id_am_tv_quiz_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="QuizTime"
-            android:textColor="#FFF"
-            android:textSize="56sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/id_am_tv_shoak_se_khelo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="142dp"
-            android:text="Play like a game"
-            android:textColor="#FFF"/>
-    </RelativeLayout>
-
-    <ScrollView
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.104">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:hint="Enter your name please"
-                android:inputType="textCapWords"
-                android:padding="18dp"
-                android:singleLine="true" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="18dp"
-                android:text="Start"
-                android:textColor="#000"
-                android:textSize="24sp" />
-        </LinearLayout>
-    </ScrollView-->
-
-    <!-- Question answer part-->
-    <!--LinearLayout
+    <!--Entry point to play QuizTime game starts here-->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/id_am_cl_auth_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
+            android:id="@+id/id_am_rl_auth_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/im1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/background_image_480" />
+                app:srcCompat="@drawable/background_image_480" />
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:text="QuizTime"
+                android:textColor="#FFF"
+                android:textSize="56sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/id_am_tv_quiz_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
-                    android:text="Hi! Bishram Munda"
-                    android:textColor="#FFF"
-                    android:textSize="20sp"
-                    android:fontFamily="serif-monospace"
-                    tools:targetApi="jelly_bean" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="It's"
-                    android:textColor="#FFF" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="QuizTime"
-                    android:textStyle="bold"
-                    android:textColor="#FFF"
-                    android:textSize="48sp" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="142dp"
+                android:text="Play like a game"
+                android:textColor="#FFF" />
         </RelativeLayout>
 
-        <ImageView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
-            android:src="@drawable/background_image_480" />
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_am_rl_auth_container"
+            app:layout_constraintVertical_bias="0.104">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
-            android:src="@drawable/background_image_480" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
-            android:src="@drawable/background_image_480" />
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:hint="Enter your name please"
+                    android:inputType="textCapWords"
+                    android:padding="18dp"
+                    android:singleLine="true" />
 
-    <View
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp"
+                    android:text="Start"
+                    android:textColor="#000"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+    <!--Entry point to play QuizTime game Ends here-->
+
+    <!--Question option layout design starts here-->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/id_am_cl_question_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#55ff008c" />
-
-    <TextView
-        android:id="@+id/id_am_btn_sv_next"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:fontFamily="sans-serif-condensed"
-        android:gravity="center"
-        android:text="Save &amp; Next"
-        android:textColor="#FFF"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:targetApi="jelly_bean" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginStart="1dp"
-        android:background="#eaeaea"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@id/id_am_btn_sv_next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/im1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/background_image_480" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/id_am_tv_quiz_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="serif-monospace"
+                        android:text="Hi! Bishram Munda"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        tools:targetApi="jelly_bean" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="It's"
+                        android:textColor="#FFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="QuizTime"
+                        android:textColor="#FFF"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_image_480" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_image_480" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_image_480" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#55ff008c" />
+
+        <TextView
+            android:id="@+id/id_am_btn_sv_next"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Save &amp; Next"
+            android:textColor="#FFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:targetApi="jelly_bean" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:background="#eaeaea"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/id_am_btn_sv_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="24dp"
+                    android:paddingEnd="24dp"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:paddingStart="24dp"
+                    android:paddingTop="36dp"
+                    android:text="Who is our (Current Indian) Prime Minister?"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mahatma Gandhi"
+                        android:textColor="#000" />
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pandit Jawaharlal Nehru"
+                        android:textColor="#000" />
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Narendra Damodar Das Modi"
+                        android:textColor="#000" />
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Sarbpalli Radhakrishnann"
+                        android:textColor="#000" />
+                </RadioGroup>
+            </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginStart="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:paddingBottom="24dp"
-                android:paddingEnd="24dp"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:paddingStart="24dp"
-                android:paddingTop="36dp"
-                android:text="Who is our (Current Indian) Prime Minister?"
-                android:textColor="#000"
-                android:textSize="18sp" />
+                android:layout_weight="1"
+                android:text="Question #01 of 10"
+                android:textColor="#FFF" />
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/colorAccent" />
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#FFF" />
 
-            <RadioGroup
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="24dp"
-                android:orientation="vertical">
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Mahatma Gandhi"
-                    android:textColor="#000" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Pandit Jawaharlal Nehru"
-                    android:textColor="#000" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Narendra Damodar Das Modi"
-                    android:textColor="#000" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dr. Sarbpalli Radhakrishnann"
-                    android:textColor="#000" />
-            </RadioGroup>
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Time elapsed - 08:56"
+                android:textColor="#FFF" />
         </LinearLayout>
-    </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+    <!--Question option layout design ends here-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginStart="24dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Question #01 of 10"
-            android:textColor="#FFF" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#FFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:text="Time elapsed - 08:56"
-            android:textColor="#FFF" />
-    </LinearLayout-->
-
+    <!--Total score earned is shown here-->
     <LinearLayout
         android:id="@+id/id_am_ll_score_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="@drawable/gradient_background"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Awesome"
-            android:textSize="72sp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="awesome"
             android:textColor="#FFF"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-condensed"/>
+            android:textSize="72sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/check_36"/>
+            android:src="@drawable/check_48" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your total score is"
             android:layout_marginTop="24dp"
-            android:textSize="20sp"/>
+            android:text="Your total score is"
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="25/50"
-            android:textSize="64sp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="64sp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
