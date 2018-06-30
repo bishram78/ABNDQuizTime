@@ -20,7 +20,6 @@
             android:id="@+id/id_am_rl_auth_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -30,24 +29,29 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
-                app:srcCompat="@drawable/background_image_480" />
+                android:src="@drawable/background_image_480" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="QuizTime"
-                android:textColor="#FFF"
-                android:textSize="56sp"
-                android:textStyle="bold" />
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="142dp"
-                android:text="Play like a game"
-                android:textColor="#FFF" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="QuizTime"
+                    android:textColor="#FFF"
+                    android:textSize="56sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Play like a game"
+                    android:textColor="#FFF" />
+            </LinearLayout>
         </RelativeLayout>
 
         <ScrollView
@@ -68,7 +72,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/id_am_et_enter_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -78,11 +82,12 @@
                     android:singleLine="true" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/id_ma_btn_start"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="18dp"
                     android:text="Start"
+                    android:onClick="startQuiz"
                     android:textColor="#000"
                     android:textSize="24sp" />
             </LinearLayout>
@@ -129,7 +134,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/id_am_tv_quiz_time"
+                        android:id="@+id/id_am_tv_username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="24dp"
@@ -194,6 +199,7 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="Save &amp; Next"
+            android:onClick="saveNext"
             android:textColor="#FFF"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -340,6 +346,7 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/id_am_tv_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="25/50"
