@@ -1,126 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <!--Entry point to play QuizTime game starts here-->
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/id_am_cl_auth_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:id="@+id/id_am_rl_auth_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/background_image_480" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="QuizTime"
-                    android:textColor="#FFF"
-                    android:textSize="56sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Play like a game"
-                    android:textColor="#FFF" />
-            </LinearLayout>
-        </RelativeLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginStart="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/id_am_rl_auth_container"
-            app:layout_constraintVertical_bias="0.104">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/id_am_et_enter_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:hint="Enter your name please"
-                    android:inputType="textCapWords"
-                    android:padding="18dp"
-                    android:singleLine="true" />
-
-                <Button
-                    android:id="@+id/id_ma_btn_start"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="startQuiz"
-                    android:padding="18dp"
-                    android:text="Start"
-                    android:textColor="#000"
-                    android:textSize="24sp" />
-            </LinearLayout>
-        </ScrollView>
-    </android.support.constraint.ConstraintLayout>
-    <!--Entry point to play QuizTime game Ends here-->
-
-    <!--Question option layout design starts here-->
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/id_am_cl_question_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/background_image_480" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#55ff008c" />
+
+        <!--Entry point to play QuizTime game starts here-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/id_am_cl_auth_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <RelativeLayout
+                android:id="@+id/id_am_rl_auth_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/im1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
@@ -138,7 +64,6 @@
                         android:id="@+id/id_am_tv_username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="24dp"
                         android:fontFamily="serif-monospace"
                         android:text="Hi! Bishram Munda"
                         android:textColor="#FFF"
@@ -148,70 +73,64 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="It's"
-                        android:textColor="#FFF" />
+                        android:text="QuizTime"
+                        android:textColor="#FFF"
+                        android:textSize="56sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="QuizTime"
-                        android:textColor="#FFF"
-                        android:textSize="48sp"
-                        android:textStyle="bold" />
+                        android:text="Play for knowledge"
+                        android:textColor="#FFF" />
                 </LinearLayout>
             </RelativeLayout>
 
-            <ImageView
+            <LinearLayout
+                android:id="@+id/id_am_ll_entry_point"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:scaleType="centerCrop"
-                android:src="@drawable/background_image_480" />
+                android:layout_marginBottom="80dp"
+                android:layout_marginTop="80dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_am_rl_auth_container">
 
-            <ImageView
+                <EditText
+                    android:id="@+id/id_am_et_enter_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:hint="Enter your name please"
+                    android:inputType="textCapWords"
+                    android:padding="18dp"
+                    android:singleLine="true"
+                    android:textColor="#FFF"
+                    android:textColorHint="#acacac" />
+
+                <ImageButton
+                    android:id="@+id/id_ma_btn_start"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@drawable/round_bkg_start_button"
+                    android:contentDescription="@string/app_name"
+                    android:onClick="startQuiz"
+                    android:padding="18dp"
+                    android:src="@drawable/chevron_right_holo_dark" />
+            </LinearLayout>
+
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:scaleType="centerCrop"
-                android:src="@drawable/background_image_480" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:scaleType="centerCrop"
-                android:src="@drawable/background_image_480" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#55ff008c" />
-
-        <Button
-            android:id="@+id/id_am_btn_sv_next"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:onClick="saveNext"
-            android:text="Save &amp; Next"
-            android:textColor="#FFF"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:targetApi="jelly_bean" />
-
-        <ScrollView
-            android:id="@+id/id_am_sv_question_container"
-            style="@style/ScrollStyle"
-            app:layout_constraintBottom_toTopOf="@id/id_am_btn_sv_next"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_am_rl_auth_container">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -261,7 +180,7 @@
                 <LinearLayout
                     android:id="@+id/id_am_ll_qo_02"
                     style="@style/LinearForQO"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <TextView
                         style="@style/QuestionTextViewStyle"
@@ -300,7 +219,7 @@
                 <LinearLayout
                     android:id="@+id/id_am_ll_qo_03"
                     style="@style/LinearForQO"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <TextView
                         style="@style/QuestionTextViewStyle"
@@ -625,82 +544,183 @@
                     </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
+            </ScrollView>
+        </android.support.constraint.ConstraintLayout>
+        <!--Entry point to play QuizTime game Ends here-->
 
-        <LinearLayout
+        <!--Question option layout design starts here-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/id_am_cl_question_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginStart="24dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/id_am_sv_question_container"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Question #01 of 10"
-                android:textColor="#FFF" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/im1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/background_image_480" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="It's"
+                            android:textColor="#FFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="QuizTime"
+                            android:textColor="#FFF"
+                            android:textSize="48sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/background_image_480" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/background_image_480" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/background_image_480" />
+            </LinearLayout>
 
             <View
-                android:layout_width="1dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FFF" />
+                android:background="#55ff008c" />
+
+            <Button
+                android:id="@+id/id_am_btn_sv_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:onClick="saveNext"
+                android:text="Save &amp; Next"
+                android:textColor="#FFF"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginStart="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Question #01 of 10"
+                    android:textColor="#FFF" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="Time elapsed - 08:56"
+                    android:textColor="#FFF" />
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+        <!--Question option layout design ends here-->
+
+        <!--Total score earned is shown here-->
+        <LinearLayout
+            android:id="@+id/id_am_ll_score_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:text="Time elapsed - 08:56"
-                android:textColor="#FFF" />
+                android:fontFamily="sans-serif-condensed"
+                android:text="awesome"
+                android:textColor="#FFF"
+                android:textSize="72sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/check_48" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Your total score is"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/id_am_tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25/50"
+                android:textColor="#000"
+                android:textSize="64sp" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
-    <!--Question option layout design ends here-->
-
-    <!--Total score earned is shown here-->
-    <LinearLayout
-        android:id="@+id/id_am_ll_score_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/gradient_background"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:text="awesome"
-            android:textColor="#FFF"
-            android:textSize="72sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/check_48" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Your total score is"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/id_am_tv_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="25/50"
-            android:textColor="#000"
-            android:textSize="64sp" />
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</ScrollView>
