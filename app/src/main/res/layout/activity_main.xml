@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     tools:context=".MainActivity">
-
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="match_parent"
@@ -22,17 +17,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/background_image_480" />
 
-        <View
+        <!--View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#55ff008c" />
+            android:background="#55ff008c" /-->
 
         <!--Entry point to play QuizTime game starts here-->
         <android.support.constraint.ConstraintLayout
             android:id="@+id/id_am_cl_auth_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,19 +117,13 @@
                     android:src="@drawable/chevron_right_holo_dark" />
             </LinearLayout>
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fillViewport="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/id_am_rl_auth_container">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
                 <!--Question option 01-->
                 <LinearLayout
@@ -174,13 +162,29 @@
                             style="@style/RadioButtonStyle"
                             android:text="@string/txt_option_1d" />
                     </RadioGroup>
+
+                    <Button
+                        android:id="@+id/id_am_btn_sv_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed"
+                        android:onClick="saveNext"
+                        android:text="Save &amp; Next"
+                        android:textColor="#FFF"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:targetApi="jelly_bean" />
+
                 </LinearLayout>
 
                 <!--Question option 02-->
                 <LinearLayout
                     android:id="@+id/id_am_ll_qo_02"
                     style="@style/LinearForQO"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <TextView
                         style="@style/QuestionTextViewStyle"
@@ -219,7 +223,7 @@
                 <LinearLayout
                     android:id="@+id/id_am_ll_qo_03"
                     style="@style/LinearForQO"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <TextView
                         style="@style/QuestionTextViewStyle"
@@ -544,7 +548,6 @@
                     </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
-            </ScrollView>
         </android.support.constraint.ConstraintLayout>
         <!--Entry point to play QuizTime game Ends here-->
 
@@ -627,25 +630,10 @@
                     android:src="@drawable/background_image_480" />
             </LinearLayout>
 
-            <View
+            <!--View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#55ff008c" />
-
-            <Button
-                android:id="@+id/id_am_btn_sv_next"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:onClick="saveNext"
-                android:text="Save &amp; Next"
-                android:textColor="#FFF"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:targetApi="jelly_bean" />
+                android:background="#55ff008c" /-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -722,5 +710,4 @@
                 android:textColor="#000"
                 android:textSize="64sp" />
         </LinearLayout>
-    </android.support.constraint.ConstraintLayout>
-</ScrollView>
+</android.support.constraint.ConstraintLayout>
