@@ -1,54 +1,116 @@
 <resources>
     <string name="app_name">QuizTime</string>
+
+    <!--Question number 01 with options-->
     <string name="txt_question_01">In Information Technology failure in the Kernel is called as -</string>
     <string name="txt_option_1a">Crash</string>
     <string name="txt_option_1b">Crash dump</string>
     <string name="txt_option_1c">Dump</string>
     <string name="txt_option_1d">Kernel error</string>
+
+    <!--Question number 02 with options-->
     <string name="txt_tv_option_02">What type of process creates a smaller file that is faster to transfer over the internet?</string>
     <string name="txt_option_2a">Compression</string>
     <string name="txt_option_2b">Fragmentation</string>
     <string name="txt_option_2c">Encapsulation</string>
     <string name="txt_option_2d">None of the above</string>
+
+    <!--Question number 03 with options-->
     <string name="txt_question_03">The first mechanical computer designed by Charles Babbage was called -</string>
     <string name="txt_option_3a">Abacus</string>
     <string name="txt_option_3b">Analytical Engine</string>
     <string name="txt_option_3c">Calculator</string>
     <string name="txt_option_3d">Processor</string>
+
+    <!--Question number 04 with options-->
     <string name="txt_question_04">Unsorted transaction that can be used to immediately update database is called -</string>
     <string name="txt_option_4a">Direct database access</string>
     <string name="txt_option_4b">Sequential database access</string>
     <string name="txt_option_4c">Alternate database access</string>
     <string name="txt_option_4d">Instance database access</string>
-    <string name="txt_question_05">Which of the following is an example of hardware?</string>
+
+    <!--Question number 05 with options-->
+    <string name="txt_question_05">Which of the following are the examples of hardware?</string>
     <string name="txt_option_5a">Scanner</string>
     <string name="txt_option_5b">Printer</string>
     <string name="txt_option_5c">Interpreter</string>
     <string name="txt_option_5d">Monitor</string>
+
+    <!--Question number 06 with options-->
+    <string name="txt_question_06">On a CD-RW you can</string>
     <string name="txt_option_6a">read and write information</string>
     <string name="txt_option_6b">only read information</string>
     <string name="txt_option_6c">only write information</string>
     <string name="txt_option_6d">read, write and rewrite information</string>
-    <string name="txt_question_06">On a CD-RW you can</string>
     <string name="hint_am_type_answer">Type your answer here</string>
+
+    <!--Question number 07 without options-->
     <string name="txt_question_07">What is the main board of a computer called?</string>
+
+    <!--Question number 08 with options-->
+    <string name="txt_question_08">\'One Drive\' is the name of Cloud Computing Service of which company?</string>
     <string name="txt_option_8a">Apple</string>
     <string name="txt_option_8b">Yahoo!</string>
     <string name="txt_option_8c">Microsoft</string>
     <string name="txt_option_8d">Google</string>
-    <string name="txt_question_08">\'One Drive\' is the name of Cloud Computing Service of which company?</string>
+
+    <!--Question number 09 with options-->
     <string name="txt_question_09">Which of the following are not a language of DBMS?</string>
     <string name="txt_option_9a">DDL</string>
     <string name="txt_option_9b">DML</string>
     <string name="txt_option_9c">PASCAL</string>
     <string name="txt_option_9d">COBOL</string>
+
+    <!--Question number 10 with options-->
     <string name="txt_question_10">A word in a web page that, when clicked, opens another document is termed as -</string>
     <string name="txt_option_10a">Anchor</string>
     <string name="txt_option_10b">Hyperlink</string>
     <string name="txt_option_10c">Reference</string>
     <string name="txt_option_10d">URL</string>
+
     <string name="txt_am_tv_sn_1">1</string>
     <string name="txt_am_tv_sn_2">2</string>
     <string name="txt_am_tv_sn_3">3</string>
     <string name="txt_am_tv_sn_4">4</string>
+    <string name="txt_img_desc">Background Image</string>
+    <string name="txt_am_tv_save_next"><![CDATA[Save & Next]]></string>
+    <string name="hint_am_et_enter_name">Enter your name please</string>
+    <string name="txt_am_tv_hi_fellas">Hi! Bishram Munda</string>
+    <string name="txt_am_tv_quiz_time">QuizTime</string>
+    <string name="txt_am_tv_pfk">Play for knowledge</string>
+    <string name="txt_am_tv_ques_no">Question 1 of 10</string>
+    <string name="txt_am_tv_time_used">Time elapsed 00:00</string>
+    <string name="txt_am_tv_score_is">Your total score is</string>
+    <string name="txt_field_filled">Name field must be filled.</string>
+    <string name="txt_quiz_started">Quiz started.</string>
+    <string name="txt_analytical_engine">Analytical Engine</string>
+    <string name="txt_score_earned">%d/50</string>
+    <string name="txt_question_number">Question %d of 10</string>
+    <string name="txt_time_elapsed_0m_0s">Time elapsed 0%d:0%d</string>
+    <string name="txt_time_elapsed_0m">Time elapsed 0%d:%d</string>
+    <string name="txt_time_elapsed_0s">Time elapsed %d:0%d</string>
+    <string name="txt_time_elapsed">Time elapsed %d:%d</string>
+    <string name="txt_hi_username">Hi! %s</string>
+    <string name="txt_loading_question">Loading %s question. Please wait&#8230;</string>
+    <string name="txt_computing_result">Computing your result. Please wait&#8230;</string>
+
+    <!--Ordinal numbers second to ninth.-->
+    <string name="txt_second">second</string>
+    <string name="txt_third">third</string>
+    <string name="txt_fourth">fourth</string>
+    <string name="txt_fifth">fifth</string>
+    <string name="txt_sixth">sixth</string>
+    <string name="txt_seventh">seventh</string>
+    <string name="txt_eighth">eighth</string>
+    <string name="txt_ninth">ninth</string>
+
+    <string name="txt_last">last</string>
+    <string name="txt_motherboard">Motherboard</string>
+
+    <string name="txt_am_tv_submit">Submit</string>
+    <string name="txt_ops">Ops!</string>
+    <string name="txt_nice">Nice</string>
+    <string name="txt_awesome">Awesome</string>
+    <string name="txt_excellent">Excellent</string>
+    <string name="txt_outstanding">Outstanding</string>
 </resources>

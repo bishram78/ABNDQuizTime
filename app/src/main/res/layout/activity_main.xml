@@ -6,708 +6,717 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/background_image_480" />
+    <!--Image for background-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_image_480" />
 
-        <!--View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#55ff008c" /-->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/id_am_cl_auth_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background8C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <!--Entry point to play QuizTime game starts here-->
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/id_am_cl_auth_container"
+        <!--Header image and title layout-->
+        <RelativeLayout
+            android:id="@+id/id_am_rl_auth_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <RelativeLayout
-                android:id="@+id/id_am_rl_auth_container"
+            <ImageView
+                android:id="@+id/id_am_iv_qt_bkg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/background_image_480" />
 
-                <ImageView
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/id_am_tv_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@string/app_name"
-                    android:src="@drawable/background_image_480" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
+                    android:fontFamily="serif-monospace"
+                    android:visibility="invisible"
+                    android:maxLines="2"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="@dimen/_24dp"
+                    android:layout_marginRight="@dimen/_24dp"
+                    android:text="@string/txt_am_tv_hi_fellas"
+                    android:textColor="@color/whiteFF"
+                    android:textSize="@dimen/_20sp"
+                    tools:targetApi="jelly_bean" />
 
-                    <TextView
-                        android:id="@+id/id_am_tv_username"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="serif-monospace"
-                        android:text="Hi! Bishram Munda"
-                        android:textColor="#FFF"
-                        android:textSize="20sp"
-                        tools:targetApi="jelly_bean" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="QuizTime"
-                        android:textColor="#FFF"
-                        android:textSize="56sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Play for knowledge"
-                        android:textColor="#FFF" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <LinearLayout
-                android:id="@+id/id_am_ll_entry_point"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="80dp"
-                android:layout_marginTop="80dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/id_am_rl_auth_container">
-
-                <EditText
-                    android:id="@+id/id_am_et_enter_name"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:hint="Enter your name please"
-                    android:inputType="textCapWords"
-                    android:padding="18dp"
-                    android:singleLine="true"
-                    android:textColor="#FFF"
-                    android:textColorHint="#acacac" />
+                    android:text="@string/txt_am_tv_quiz_time"
+                    android:textColor="@color/whiteFF"
+                    android:textSize="@dimen/_56sp"
+                    android:textStyle="bold" />
 
-                <ImageButton
-                    android:id="@+id/id_ma_btn_start"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="36dp"
-                    android:background="@drawable/round_bkg_start_button"
-                    android:contentDescription="@string/app_name"
-                    android:onClick="startQuiz"
-                    android:padding="18dp"
-                    android:src="@drawable/chevron_right_holo_dark" />
+                <TextView
+                    android:id="@+id/id_am_tv_pfk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_am_tv_pfk"
+                    android:textColor="@color/whiteFF" />
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <!--Question option 01-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_01"
-                    style="@style/LinearForQO"
-                    android:visibility="visible">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_question_01" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <RadioGroup style="@style/RadioGroupStyle">
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_1a"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_1a" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_1b"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_1b" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_1c"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_1c" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_1d"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_1d" />
-                    </RadioGroup>
-
-                    <Button
-                        android:id="@+id/id_am_btn_sv_next"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-condensed"
-                        android:onClick="saveNext"
-                        android:text="Save &amp; Next"
-                        android:textColor="#FFF"
-                        android:textSize="28sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        tools:targetApi="jelly_bean" />
-
-                </LinearLayout>
-
-                <!--Question option 02-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_02"
-                    style="@style/LinearForQO"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_tv_option_02" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <RadioGroup style="@style/RadioGroupStyle">
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_2a"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_2a" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_2b"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_2b" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_2c"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_2c" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_2d"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_2d" />
-                    </RadioGroup>
-                </LinearLayout>
-
-                <!--Question option 03-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_03"
-                    style="@style/LinearForQO"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_question_03" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <LinearLayout style="@style/LinearSNWrap">
-
-                        <LinearLayout
-                            android:id="@+id/id_am_ll_option_3a"
-                            style="@style/LinearForSerialNo">
-
-                            <TextView
-                                style="@style/SerialNoStyle"
-                                android:text="@string/txt_am_tv_sn_1" />
-
-                            <TextView
-                                style="@style/SerialNoNameTV"
-                                android:text="@string/txt_option_3a" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/id_am_ll_option_3b"
-                            style="@style/LinearForSerialNo">
-
-                            <TextView
-                                style="@style/SerialNoStyle"
-                                android:text="@string/txt_am_tv_sn_2" />
-
-                            <TextView
-                                style="@style/SerialNoNameTV"
-                                android:text="@string/txt_option_3b" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/id_am_ll_option_3c"
-                            style="@style/LinearForSerialNo">
-
-                            <TextView
-                                style="@style/SerialNoStyle"
-                                android:text="@string/txt_am_tv_sn_3" />
-
-                            <TextView
-                                style="@style/SerialNoNameTV"
-                                android:text="@string/txt_option_3c" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/id_am_ll_option_3d"
-                            style="@style/LinearForSerialNo">
-
-                            <TextView
-                                style="@style/SerialNoStyle"
-                                android:text="@string/txt_am_tv_sn_4" />
-
-                            <TextView
-                                style="@style/SerialNoNameTV"
-                                android:text="@string/txt_option_3d" />
-                        </LinearLayout>
-
-                        <EditText
-                            style="@style/EnterAnswerET"
-                            android:hint="@string/hint_am_type_answer" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!--Question option 04-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_04"
-                    style="@style/LinearForQO"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_question_04" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <RadioGroup style="@style/RadioGroupStyle">
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_4a"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_4a" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_4b"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_4b" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_4c"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_4c" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_4d"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_4d" />
-                    </RadioGroup>
-                </LinearLayout>
-
-                <!--Question option 05-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_05"
-                    style="@style/LinearForQO"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_question_05" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <RadioGroup style="@style/RadioGroupStyle">
-
-                        <RadioButton
-                            android:id="@+id/id_am_cb_option_5a"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_5a" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_cb_option_5b"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_5b" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_cb_option_5c"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_5c" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_cb_option_5d"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_5d" />
-                    </RadioGroup>
-                </LinearLayout>
-
-                <!--Question option 06-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_06"
-                    style="@style/LinearForQO"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_question_06" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <RadioGroup style="@style/RadioGroupStyle">
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_6a"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_6a" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_6b"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_6b" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_6c"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_6c" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_6d"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_6d" />
-                    </RadioGroup>
-                </LinearLayout>
-
-                <!--Question option 07-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_07"
-                    style="@style/LinearForQO"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_question_07" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <EditText
-                        style="@style/EnterAnswerET24M"
-                        android:hint="@string/hint_am_type_answer" />
-                </LinearLayout>
-
-                <!--Question option 08-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_08"
-                    style="@style/LinearForQO"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_question_08" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <RadioGroup style="@style/RadioGroupStyle">
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_8a"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_8a" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_8b"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_8b" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_8c"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_8c" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_8d"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_8d" />
-                    </RadioGroup>
-                </LinearLayout>
-
-                <!--Question option 09-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_09"
-                    style="@style/LinearForQO"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_question_09" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <LinearLayout style="@style/LinearForCheckBox">
-
-                        <CheckBox
-                            android:id="@+id/id_am_cb_option_9a"
-                            style="@style/CheckboxStyle"
-                            android:text="@string/txt_option_9a" />
-
-                        <CheckBox
-                            android:id="@+id/id_am_cb_option_9b"
-                            style="@style/CheckboxStyle"
-                            android:text="@string/txt_option_9b" />
-
-                        <CheckBox
-                            android:id="@+id/id_am_cb_option_9c"
-                            style="@style/CheckboxStyle"
-                            android:text="@string/txt_option_9c" />
-
-                        <CheckBox
-                            android:id="@+id/id_am_cb_option_9d"
-                            style="@style/CheckboxStyle"
-                            android:text="@string/txt_option_9d" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!--Question option 10-->
-                <LinearLayout
-                    android:id="@+id/id_am_ll_qo_10"
-                    style="@style/LinearForQO"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/QuestionTextViewStyle"
-                        android:text="@string/txt_question_10" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="@color/colorAccent" />
-
-                    <RadioGroup style="@style/RadioGroupStyle">
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_10a"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_10a" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_10b"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_10b" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_10c"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_10c" />
-
-                        <RadioButton
-                            android:id="@+id/id_am_rb_option_10d"
-                            style="@style/RadioButtonStyle"
-                            android:text="@string/txt_option_10d" />
-                    </RadioGroup>
-                </LinearLayout>
-            </LinearLayout>
-        </android.support.constraint.ConstraintLayout>
-        <!--Entry point to play QuizTime game Ends here-->
-
-        <!--Question option layout design starts here-->
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/id_am_cl_question_container"
+        </RelativeLayout>
+
+        <!--Authentication (the entry point) layout-->
+        <LinearLayout
+            android:id="@+id/id_am_ll_entry_point"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_80dp"
+            android:paddingBottom="@dimen/_80dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_am_rl_auth_container">
+
+            <EditText
+                android:id="@+id/id_am_et_enter_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:hint="@string/hint_am_et_enter_name"
+                android:inputType="textCapWords"
+                android:padding="@dimen/_18sp"
+                android:singleLine="true"
+                android:textColor="@color/whiteFF"
+                android:textColorHint="@color/greyFF" />
+
+            <ImageButton
+                android:id="@+id/id_ma_btn_start"
+                android:layout_width="@dimen/_80dp"
+                android:layout_height="@dimen/_80dp"
+                android:layout_marginTop="@dimen/_36dp"
+                android:background="@drawable/round_bkg_start_button"
+                android:contentDescription="@string/app_name"
+                android:onClick="startQuiz"
+                android:padding="@dimen/_18dp"
+                android:src="@drawable/chevron_right_holo_dark" />
+        </LinearLayout>
+
+        <!--Question and option layout design-->
+        <LinearLayout
+            android:id="@+id/id_am_ll_question_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="parent">
 
+            <!--Question option 01-->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/im1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/background_image_480" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="It's"
-                            android:textColor="#FFF" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="QuizTime"
-                            android:textColor="#FFF"
-                            android:textSize="48sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/background_image_480" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/background_image_480" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/background_image_480" />
-            </LinearLayout>
-
-            <!--View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#55ff008c" /-->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginStart="24dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                android:id="@+id/id_am_ll_qo_01"
+                style="@style/LinearForQO"
+                android:visibility="visible">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Question #01 of 10"
-                    android:textColor="#FFF" />
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_question_01" />
 
                 <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="#FFF" />
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                <RadioGroup style="@style/RadioGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_1a"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_1a" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_1b"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_1b" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_1c"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_1c" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_1d"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_1d" />
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_01"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_save_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <!--Question option 02-->
+            <LinearLayout
+                android:id="@+id/id_am_ll_qo_02"
+                style="@style/LinearForQO"
+                android:visibility="gone">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:text="Time elapsed - 08:56"
-                    android:textColor="#FFF" />
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_tv_option_02" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                <RadioGroup style="@style/RadioGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_2a"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_2a" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_2b"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_2b" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_2c"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_2c" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_2d"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_2d" />
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_02"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_save_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
             </LinearLayout>
-        </android.support.constraint.ConstraintLayout>
-        <!--Question option layout design ends here-->
 
-        <!--Total score earned is shown here-->
-        <LinearLayout
-            android:id="@+id/id_am_ll_score_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient_background"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone">
+            <!--Question option 03-->
+            <LinearLayout
+                android:id="@+id/id_am_ll_qo_03"
+                style="@style/LinearForQO"
+                android:visibility="gone">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:text="awesome"
-                android:textColor="#FFF"
-                android:textSize="72sp"
-                android:textStyle="bold" />
+                <TextView
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_question_03" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/check_48" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Your total score is"
-                android:textSize="20sp" />
+                <LinearLayout style="@style/LinearSNWrap">
 
-            <TextView
-                android:id="@+id/id_am_tv_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="25/50"
-                android:textColor="#000"
-                android:textSize="64sp" />
+                    <LinearLayout
+                        android:id="@+id/id_am_ll_option_3a"
+                        style="@style/LinearForSerialNo">
+
+                        <TextView
+                            style="@style/SerialNoStyle"
+                            android:text="@string/txt_am_tv_sn_1" />
+
+                        <TextView
+                            style="@style/SerialNoNameTV"
+                            android:text="@string/txt_option_3a" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_am_ll_option_3b"
+                        style="@style/LinearForSerialNo">
+
+                        <TextView
+                            style="@style/SerialNoStyle"
+                            android:text="@string/txt_am_tv_sn_2" />
+
+                        <TextView
+                            style="@style/SerialNoNameTV"
+                            android:text="@string/txt_option_3b" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_am_ll_option_3c"
+                        style="@style/LinearForSerialNo">
+
+                        <TextView
+                            style="@style/SerialNoStyle"
+                            android:text="@string/txt_am_tv_sn_3" />
+
+                        <TextView
+                            style="@style/SerialNoNameTV"
+                            android:text="@string/txt_option_3c" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_am_ll_option_3d"
+                        style="@style/LinearForSerialNo">
+
+                        <TextView
+                            style="@style/SerialNoStyle"
+                            android:text="@string/txt_am_tv_sn_4" />
+
+                        <TextView
+                            style="@style/SerialNoNameTV"
+                            android:text="@string/txt_option_3d" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/id_am_et_third_ques_ans"
+                        style="@style/EnterAnswerET"
+                        android:inputType="textCapWords"
+                        android:hint="@string/hint_am_type_answer" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_03"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_save_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <!--Question option 04-->
+            <LinearLayout
+                android:id="@+id/id_am_ll_qo_04"
+                style="@style/LinearForQO"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_question_04" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                <RadioGroup style="@style/RadioGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_4a"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_4a" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_4b"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_4b" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_4c"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_4c" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_4d"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_4d" />
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_04"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_save_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <!--Question option 05-->
+            <LinearLayout
+                android:id="@+id/id_am_ll_qo_05"
+                style="@style/LinearForQO"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_question_05" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                    <CheckBox
+                        android:id="@+id/id_am_cb_option_5a"
+                        style="@style/CheckboxStyleTop"
+                        android:text="@string/txt_option_5a" />
+
+                    <CheckBox
+                        android:id="@+id/id_am_cb_option_5b"
+                        style="@style/CheckboxStyle"
+                        android:text="@string/txt_option_5b" />
+
+                    <CheckBox
+                        android:id="@+id/id_am_cb_option_5c"
+                        style="@style/CheckboxStyle"
+                        android:text="@string/txt_option_5c" />
+
+                    <CheckBox
+                        android:id="@+id/id_am_cb_option_5d"
+                        style="@style/CheckboxStyleBottom"
+                        android:text="@string/txt_option_5d" />
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_05"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_save_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <!--Question option 06-->
+            <LinearLayout
+                android:id="@+id/id_am_ll_qo_06"
+                style="@style/LinearForQO"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_question_06" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                <RadioGroup style="@style/RadioGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_6a"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_6a" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_6b"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_6b" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_6c"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_6c" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_6d"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_6d" />
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_06"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_save_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <!--Question option 07-->
+            <LinearLayout
+                android:id="@+id/id_am_ll_qo_07"
+                style="@style/LinearForQO"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_question_07" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                <EditText
+                    android:id="@+id/id_am_et_seventh_que_ans"
+                    style="@style/EnterAnswerET24M"
+                    android:inputType="textCapWords"
+                    android:hint="@string/hint_am_type_answer" />
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_07"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_save_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <!--Question option 08-->
+            <LinearLayout
+                android:id="@+id/id_am_ll_qo_08"
+                style="@style/LinearForQO"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_question_08" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                <RadioGroup style="@style/RadioGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_8a"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_8a" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_8b"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_8b" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_8c"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_8c" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_8d"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_8d" />
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_08"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_save_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <!--Question option 09-->
+            <LinearLayout
+                android:id="@+id/id_am_ll_qo_09"
+                style="@style/LinearForQO"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_question_09" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                <CheckBox
+                    android:id="@+id/id_am_cb_option_9a"
+                    style="@style/CheckboxStyleTop"
+                    android:text="@string/txt_option_9a" />
+
+                <CheckBox
+                    android:id="@+id/id_am_cb_option_9b"
+                    style="@style/CheckboxStyle"
+                    android:text="@string/txt_option_9b" />
+
+                <CheckBox
+                    android:id="@+id/id_am_cb_option_9c"
+                    style="@style/CheckboxStyle"
+                    android:text="@string/txt_option_9c" />
+
+                <CheckBox
+                    android:id="@+id/id_am_cb_option_9d"
+                    style="@style/CheckboxStyleBottom"
+                    android:text="@string/txt_option_9d" />
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_09"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_save_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <!--Question option 10-->
+            <LinearLayout
+                android:id="@+id/id_am_ll_qo_10"
+                style="@style/LinearForQO"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/QuestionTextViewStyle"
+                    android:text="@string/txt_question_10" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorAccent" />
+
+                <RadioGroup style="@style/RadioGroupStyle">
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_10a"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_10a" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_10b"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_10b" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_10c"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_10c" />
+
+                    <RadioButton
+                        android:id="@+id/id_am_rb_option_10d"
+                        style="@style/RadioButtonStyle"
+                        android:text="@string/txt_option_10d" />
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/id_am_btn_sv_next_10"
+                    style="@style/SaveNextButton"
+                    android:onClick="saveNext"
+                    android:text="@string/txt_am_tv_submit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
         </LinearLayout>
+
+        <!--Question number and time elapsed layout-->
+        <LinearLayout
+            android:id="@+id/id_am_ll_qn_te"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_24dp"
+            android:layout_marginLeft="@dimen/_24dp"
+            android:layout_marginRight="@dimen/_24dp"
+            android:layout_marginStart="@dimen/_24dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/id_am_ll_question_option"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/id_am_tv_ques_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_am_tv_ques_no"
+                android:textColor="@color/whiteFF" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/whiteFF" />
+
+            <TextView
+                android:id="@+id/id_am_tv_time_elapsed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/txt_am_tv_time_used"
+                android:textColor="@color/whiteFF" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <!--Total score earned is shown here-->
+    <LinearLayout
+        android:id="@+id/id_am_ll_score_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/id_am_tv_awesome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/whiteFF"
+            android:textSize="@dimen/_72sp"
+            android:textStyle="bold"
+            tools:targetApi="jelly_bean" />
+
+        <ImageView
+            android:id="@+id/id_am_iv_cross_tick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24dp"
+            android:text="@string/txt_am_tv_score_is"
+            android:textSize="@dimen/_20sp" />
+
+        <TextView
+            android:id="@+id/id_am_tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blackFF"
+            android:textSize="@dimen/_64sp" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
