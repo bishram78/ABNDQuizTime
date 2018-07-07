@@ -113,4 +113,5 @@
     <string name="txt_awesome">Awesome</string>
     <string name="txt_excellent">Excellent</string>
     <string name="txt_outstanding">Outstanding</string>
+    <string name="txt_your_score_is">Your score is %d</string>
 </resources>

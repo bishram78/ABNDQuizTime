@@ -29,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSaveNext10;
     private CheckBox cbOption5a;
     private CheckBox cbOption5b;
+    private CheckBox cbOption5c;
     private CheckBox cbOption5d;
+    private CheckBox cbOption9a;
+    private CheckBox cbOption9b;
     private CheckBox cbOption9c;
     private CheckBox cbOption9d;
     private EditText etName;
@@ -91,7 +94,10 @@ public class MainActivity extends AppCompatActivity {
         btnSaveNext10 = findViewById(R.id.id_am_btn_sv_next_10);
         cbOption5a = findViewById(R.id.id_am_cb_option_5a);
         cbOption5b = findViewById(R.id.id_am_cb_option_5b);
+        cbOption5c = findViewById(R.id.id_am_cb_option_5c);
         cbOption5d = findViewById(R.id.id_am_cb_option_5d);
+        cbOption9a = findViewById(R.id.id_am_cb_option_9a);
+        cbOption9b = findViewById(R.id.id_am_cb_option_9b);
         cbOption9c = findViewById(R.id.id_am_cb_option_9c);
         cbOption9d = findViewById(R.id.id_am_cb_option_9d);
         ivQtBackground = findViewById(R.id.id_am_iv_qt_bkg);
@@ -242,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.id_am_btn_sv_next_05:
-                if (cbOption5a.isChecked()&&cbOption5b.isChecked()&&cbOption5d.isChecked()) {
+                if (cbOption5a.isChecked()&&cbOption5b.isChecked()&&!cbOption5c.isChecked()&&cbOption5d.isChecked()) {
                     scoreEarned += 5;
                 }
                 mToastShort(String.format(getString(R.string.txt_loading_question), getString(R.string.txt_sixth)));
@@ -260,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.id_am_btn_sv_next_07:
-                if (etOption7Ans.getText().toString().equals(getString(R.string.txt_motherboard))) {
+                if (etOption7Ans.getText().toString().trim().equals(getString(R.string.txt_motherboard))) {
                     scoreEarned += 5;
                 }
                 mToastShort(String.format(getString(R.string.txt_loading_question), getString(R.string.txt_eighth)));
@@ -278,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.id_am_btn_sv_next_09:
-                if (cbOption9c.isChecked()&&cbOption9d.isChecked()) {
+                if (!cbOption9a.isChecked()&&!cbOption9b.isChecked()&&cbOption9c.isChecked()&&cbOption9d.isChecked()) {
                     scoreEarned += 5;
                 }
                 mToastShort(String.format(getString(R.string.txt_loading_question), getString(R.string.txt_last)));
@@ -308,6 +314,15 @@ public class MainActivity extends AppCompatActivity {
                 }
                 tvScore.setText(String.format(getString(R.string.txt_score_earned), scoreEarned));
                 mToastShort(getString(R.string.txt_computing_result));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        String message = String.format(getString(R.string.txt_your_score_is), scoreEarned);
+
+                        //This will show the result as a Toast message.
+                        mToastLong(message);
+                    }
+                }, 2000);
                 btnSaveNext10.setVisibility(View.INVISIBLE);
                 loadingPleaseWait(2000, 10);
                 break;
